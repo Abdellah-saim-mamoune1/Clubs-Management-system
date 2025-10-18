@@ -2,6 +2,12 @@
 
 A full-stack web application for managing university or organizational clubs. Built with **React**, **Tailwind CSS**, and **ASP.NET Core Web API**.
 
+
+![Dashboard Screenshot](./Frontend/assets/Screenshot (2763).png)
+
+
+
+
 ---
 
 ## 🧩 Tech Stack
