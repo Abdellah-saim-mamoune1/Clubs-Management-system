@@ -4,8 +4,12 @@ A full-stack web application for managing university or organizational clubs. Bu
 
 
 ![Dashboard Screenshot](./Frontend/assets/screenshot-2763.png)
-
-
+![Dashboard Screenshot](./Frontend/assets/screenshot-2764.png)
+![Dashboard Screenshot](./Frontend/assets/screenshot-2765.png)
+![Dashboard Screenshot](./Frontend/assets/screenshot-2766.png)
+![Dashboard Screenshot](./Frontend/assets/screenshot-2767.png)
+![Dashboard Screenshot](./Frontend/assets/screenshot-2768.png)
+![Dashboard Screenshot](./Frontend/assets/screenshot-2769.png)
 
 
 ---
