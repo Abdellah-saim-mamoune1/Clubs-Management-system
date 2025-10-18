@@ -1,0 +1,608 @@
+[
+  {
+    "ContainingType": "EventsManagement.Controllers.AuthenticationController",
+    "Method": "IsLoggedIn",
+    "RelativePath": "api/authentication/is-logged-in",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "EventsManagement.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "UpdateClubAsync",
+    "RelativePath": "api/club/admin/{UserId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.ClubUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "AcceptCandidateApplicationAsync",
+    "RelativePath": "api/club/admin/candidate/accept/{ApplicationId},{UserId},{ClubId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApplicationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "RefuseCandidateApplicationAsync",
+    "RelativePath": "api/club/admin/candidate/refuse/{ApplicationId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ApplicationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "GetCandidatesApplicationsPaginatedAsync",
+    "RelativePath": "api/club/admin/candidates/{ClubId},{PageNumber},{PageSize}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PageNumber",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "RequestEventAsync",
+    "RelativePath": "api/club/admin/event/{UserId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.ClubRequestEventDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "UpdateEventAsync",
+    "RelativePath": "api/club/admin/event/{UserId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.UpdatePostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "DeleteEventAsync",
+    "RelativePath": "api/club/admin/event/{UserId},{PostId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "PostId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "RemoveMemberAsync",
+    "RelativePath": "api/club/admin/member/{UserId},{ClubId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "Method": "SetAsAdminMemberAsync",
+    "RelativePath": "api/club/admin/member/set-as-admin/{UserId},{ClubId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubByIdAsync",
+    "RelativePath": "api/clubs/by-Id/{UserId},{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubsByTypeAsync",
+    "RelativePath": "api/clubs/by-type",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "typeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "CheckRequestClubCreationAsync",
+    "RelativePath": "api/clubs/check-requested-club-creation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "JoinAnEventAsync",
+    "RelativePath": "api/clubs/event/{EventId}/join",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "ViewEventsAsync",
+    "RelativePath": "api/clubs/event/{EventId}/view",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetEventByIdAsync",
+    "RelativePath": "api/clubs/event/{UserId},{EventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "EventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubEventsPaginatedAsync",
+    "RelativePath": "api/clubs/events/{UserId},{ClubId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetEventsPaginatedAsync",
+    "RelativePath": "api/clubs/events/search-by-name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetUpcomingClubsEventsPaginatedAsync",
+    "RelativePath": "api/clubs/events/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubsPaginatedAsync",
+    "RelativePath": "api/clubs/join",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.ClubJoiningRequestSetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubsMembersAsync",
+    "RelativePath": "api/clubs/members/{ClubId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetMostActiveClubsAsync",
+    "RelativePath": "api/clubs/most-active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetNewClubsAsync",
+    "RelativePath": "api/clubs/new",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "RequestClubCreationAsync",
+    "RelativePath": "api/clubs/request-creating",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.ClubRequestCreationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubsPaginatedAsync",
+    "RelativePath": "api/clubs/search-by-name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "Method": "GetClubsTypesAsync",
+    "RelativePath": "api/clubs/types",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "GetAsync",
+    "RelativePath": "api/employee/by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "GetRequestsAsync",
+    "RelativePath": "api/employee/clubs/requests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "AcceptCreationRequestAsync",
+    "RelativePath": "api/employee/clubs/requests/{RequestId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RequestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "DeleteCreationRequestAsync",
+    "RelativePath": "api/employee/clubs/requests/{RequestId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "RequestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "LoginEmployeeAsync",
+    "RelativePath": "api/employee/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.Employee.LoginEmployeeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeStatisticsController",
+    "Method": "GetAsync",
+    "RelativePath": "api/employee/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.UserController",
+    "Method": "GetAsync",
+    "RelativePath": "api/user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.UserController",
+    "Method": "GetAsync",
+    "RelativePath": "api/user/by-id/{StudentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StudentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.UserController",
+    "Method": "UpdateImageAsync",
+    "RelativePath": "api/user/image",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "form",
+        "Type": "EventsManagement.Dtos.UserUpdateImageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

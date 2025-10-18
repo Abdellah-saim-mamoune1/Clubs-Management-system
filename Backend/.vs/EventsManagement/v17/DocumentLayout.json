@@ -1,0 +1,308 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\services\\employee\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:services\\employee\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\interfaces\\services\\employee\\iemployeeservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:interfaces\\services\\employee\\iemployeeservice.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\controllers\\employee\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:controllers\\employee\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\dtos\\employee\\loginemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:dtos\\employee\\loginemployeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\dtos\\employee\\employeeinfogetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:dtos\\employee\\employeeinfogetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\controllers\\employee\\employeestatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:controllers\\employee\\employeestatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\services\\student\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:services\\student\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\repositories\\employee\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:repositories\\employee\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\services\\student\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:services\\student\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\repositories\\student\\authenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:repositories\\student\\authenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\helpers\\generatekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:helpers\\generatekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\services\\progress\\progressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:services\\progress\\progressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\interfaces\\repositories\\authentication\\iauthenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:interfaces\\repositories\\authentication\\iauthenticationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|c:\\users\\tadj tech\\desktop\\clubs\\backend\\interfaces\\repositories\\employee\\iemployeerepository.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A48DFBB4-F87B-4868-BAA4-5F5CFD9045A9}|EventsManagement.csproj|solutionrelative:interfaces\\repositories\\employee\\iemployeerepository.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 304,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Employee\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "Services\\Employee\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Employee\\EmployeeService.cs",
+              "RelativeToolTip": "Services\\Employee\\EmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:40:33.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IEmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Repositories\\Employee\\IEmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\Repositories\\Employee\\IEmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Repositories\\Employee\\IEmployeeRepository.cs",
+              "RelativeToolTip": "Interfaces\\Repositories\\Employee\\IEmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:40:12.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Repositories\\Employee\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Employee\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Repositories\\Employee\\EmployeeRepository.cs",
+              "RelativeToolTip": "Repositories\\Employee\\EmployeeRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:34:53.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Student\\StudentService.cs",
+              "RelativeDocumentMoniker": "Services\\Student\\StudentService.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Student\\StudentService.cs",
+              "RelativeToolTip": "Services\\Student\\StudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:14:52.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Student\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "Services\\Student\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Student\\AuthenticationService.cs",
+              "RelativeToolTip": "Services\\Student\\AuthenticationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:09:30.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AuthenticationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Repositories\\Student\\AuthenticationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Student\\AuthenticationRepository.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Repositories\\Student\\AuthenticationRepository.cs",
+              "RelativeToolTip": "Repositories\\Student\\AuthenticationRepository.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAwwIoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:08:30.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Controllers\\Employee\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Employee\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Controllers\\Employee\\EmployeeController.cs",
+              "RelativeToolTip": "Controllers\\Employee\\EmployeeController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T18:18:43.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginEmployeeDto.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Dtos\\Employee\\LoginEmployeeDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\Employee\\LoginEmployeeDto.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Dtos\\Employee\\LoginEmployeeDto.cs",
+              "RelativeToolTip": "Dtos\\Employee\\LoginEmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:41:13.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IEmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Services\\Employee\\IEmployeeService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\Services\\Employee\\IEmployeeService.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Services\\Employee\\IEmployeeService.cs",
+              "RelativeToolTip": "Interfaces\\Services\\Employee\\IEmployeeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:50:40.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:54:01.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeInfoGetDto.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Dtos\\Employee\\EmployeeInfoGetDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\Employee\\EmployeeInfoGetDto.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Dtos\\Employee\\EmployeeInfoGetDto.cs",
+              "RelativeToolTip": "Dtos\\Employee\\EmployeeInfoGetDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T20:05:47.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-09T19:59:37.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeStatisticsController.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Controllers\\Employee\\EmployeeStatisticsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Employee\\EmployeeStatisticsController.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Controllers\\Employee\\EmployeeStatisticsController.cs",
+              "RelativeToolTip": "Controllers\\Employee\\EmployeeStatisticsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:55:50.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GenerateKeys.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Helpers\\GenerateKeys.cs",
+              "RelativeDocumentMoniker": "Helpers\\GenerateKeys.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Helpers\\GenerateKeys.cs",
+              "RelativeToolTip": "Helpers\\GenerateKeys.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:12:05.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProgressService.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Progress\\ProgressService.cs",
+              "RelativeDocumentMoniker": "Services\\Progress\\ProgressService.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Services\\Progress\\ProgressService.cs",
+              "RelativeToolTip": "Services\\Progress\\ProgressService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:14:59.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IAuthenticationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Repositories\\Authentication\\IAuthenticationRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\Repositories\\Authentication\\IAuthenticationRepository.cs",
+              "ToolTip": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\Interfaces\\Repositories\\Authentication\\IAuthenticationRepository.cs",
+              "RelativeToolTip": "Interfaces\\Repositories\\Authentication\\IAuthenticationRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T19:10:14.564Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 96,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
