@@ -13,7 +13,7 @@ services:
       timeout: 5s
       retries: 10
 
-  clubsbackend:        # <-- service name
+  clubsbackend:  
     image: ${DOCKER_REGISTRY-}clubsbackend
     build:
       context: ./Backend
@@ -23,7 +23,7 @@ services:
       - ASPNETCORE_URLS=http://+:8080  
       - ConnectionStrings__DefaultConnection=Server=clubsdb;Database=clubsdb;User Id=sa;Password=SwN12345678;TrustServerCertificate=True
     depends_on:
-      bankdb:
+      clubsdb:
         condition: service_healthy
     ports:
       - "8102:8080"

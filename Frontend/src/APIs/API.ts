@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5271/api", // your .NET backend URL
+  baseURL: "http://localhost:8102/api", // your .NET backend URL
   withCredentials: true, // since you’re using cookies/JWT
 });
 
