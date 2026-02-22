@@ -56,6 +56,8 @@ namespace EventsManagement.Controllers.Employee
 
         }
 
+
+        [Authorize(Roles = "Employee")]
         [HttpPost("clubs/requests/{RequestId}")]
         public async Task<IActionResult> AcceptCreationRequestAsync(int RequestId)
         {
@@ -68,6 +70,7 @@ namespace EventsManagement.Controllers.Employee
 
         }
 
+        [Authorize(Roles = "Employee")]
         [HttpDelete("clubs/requests/{RequestId}")]
         public async Task<IActionResult> DeleteCreationRequestAsync(int RequestId)
         {

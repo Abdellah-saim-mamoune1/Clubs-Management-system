@@ -52,7 +52,7 @@ const ClubCard = ({Club }: { Club: any }) => (
     className="flex-shrink-0 scroll-snap-start w-full sm:w-[230px] lg:w-full bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col"
   >
     <img
-      src={Club.imageUrl}
+      src={"https://snworksceo.imgix.net/bdh/7029fcf1-fa5e-4db4-8f51-5701366d3631.sized-1000x1000.jpg?ar=16%3A9&crop=faces&dpr=2&fit=crop&w=800"}
       onClick={() => navigate(`/club/${Club.id}`)}
       alt={Club.name}
       className="w-full h-[200px] sm:h-[140px] md:h-[130px] object-cover rounded-t cursor-pointer"

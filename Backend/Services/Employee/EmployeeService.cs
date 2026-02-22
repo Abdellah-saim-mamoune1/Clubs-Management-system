@@ -47,7 +47,7 @@ namespace EventsManagement.Services.Employee
 
                  string Token = Helper.CreateEmployeeToken(EmployeeId);
 
-                 await _EmployeeRepository.UpdateRefreshTokenAsync(Token,EmployeeId);
+                 //await _EmployeeRepository.UpdateRefreshTokenAsync(Token,EmployeeId);
 
                 return new ServiceResponseDto<string> {Data=Token, Status = 200 };
 
@@ -62,7 +62,7 @@ namespace EventsManagement.Services.Employee
 
         async Task<int> DoesEmployeeExist(Dtos.Employee.LoginEmployeeDto form)
         {
-            var employee = await _db.Employees.FirstOrDefaultAsync(e => (e.Account == form.Account )&& (e.HashedPassword == form.Password));
+            var employee = await _db.Employees.FirstOrDefaultAsync(e => (e.Account == form.Account )&& (e.Password == form.Password));
             return employee == null ? -1 : employee.Id;
         }
 

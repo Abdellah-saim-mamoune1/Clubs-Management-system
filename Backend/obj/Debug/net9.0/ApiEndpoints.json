@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "EventsManagement.Controllers.AuthenticationController",
+    "ContainingType": "EventsManagement.Controllers.Student.AuthenticationController",
     "Method": "IsLoggedIn",
     "RelativePath": "api/authentication/is-logged-in",
     "HttpMethod": "POST",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.AuthenticationController",
+    "ContainingType": "EventsManagement.Controllers.Student.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/authentication/login",
     "HttpMethod": "POST",
@@ -26,7 +26,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "UpdateClubAsync",
     "RelativePath": "api/club/admin/{UserId}",
     "HttpMethod": "PUT",
@@ -47,7 +47,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "AcceptCandidateApplicationAsync",
     "RelativePath": "api/club/admin/candidate/accept/{ApplicationId},{UserId},{ClubId}",
     "HttpMethod": "POST",
@@ -73,7 +73,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "RefuseCandidateApplicationAsync",
     "RelativePath": "api/club/admin/candidate/refuse/{ApplicationId}",
     "HttpMethod": "POST",
@@ -89,7 +89,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "GetCandidatesApplicationsPaginatedAsync",
     "RelativePath": "api/club/admin/candidates/{ClubId},{PageNumber},{PageSize}",
     "HttpMethod": "GET",
@@ -115,7 +115,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "RequestEventAsync",
     "RelativePath": "api/club/admin/event/{UserId}",
     "HttpMethod": "POST",
@@ -136,7 +136,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "UpdateEventAsync",
     "RelativePath": "api/club/admin/event/{UserId}",
     "HttpMethod": "PUT",
@@ -157,7 +157,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "DeleteEventAsync",
     "RelativePath": "api/club/admin/event/{UserId},{PostId}",
     "HttpMethod": "DELETE",
@@ -178,7 +178,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "RemoveMemberAsync",
     "RelativePath": "api/club/admin/member/{UserId},{ClubId}",
     "HttpMethod": "DELETE",
@@ -199,7 +199,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubAdminController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubAdminController",
     "Method": "SetAsAdminMemberAsync",
     "RelativePath": "api/club/admin/member/set-as-admin/{UserId},{ClubId}",
     "HttpMethod": "PUT",
@@ -220,7 +220,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubByIdAsync",
     "RelativePath": "api/clubs/by-Id/{UserId},{Id}",
     "HttpMethod": "GET",
@@ -241,7 +241,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubsByTypeAsync",
     "RelativePath": "api/clubs/by-type",
     "HttpMethod": "GET",
@@ -262,7 +262,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "CheckRequestClubCreationAsync",
     "RelativePath": "api/clubs/check-requested-club-creation",
     "HttpMethod": "GET",
@@ -272,7 +272,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "JoinAnEventAsync",
     "RelativePath": "api/clubs/event/{EventId}/join",
     "HttpMethod": "POST",
@@ -288,7 +288,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "ViewEventsAsync",
     "RelativePath": "api/clubs/event/{EventId}/view",
     "HttpMethod": "POST",
@@ -304,7 +304,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetEventByIdAsync",
     "RelativePath": "api/clubs/event/{UserId},{EventId}",
     "HttpMethod": "GET",
@@ -325,7 +325,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubEventsPaginatedAsync",
     "RelativePath": "api/clubs/events/{UserId},{ClubId}",
     "HttpMethod": "GET",
@@ -346,7 +346,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetEventsPaginatedAsync",
     "RelativePath": "api/clubs/events/search-by-name",
     "HttpMethod": "GET",
@@ -372,7 +372,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetUpcomingClubsEventsPaginatedAsync",
     "RelativePath": "api/clubs/events/upcoming",
     "HttpMethod": "GET",
@@ -382,8 +382,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
-    "Method": "GetClubsPaginatedAsync",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
+    "Method": "JoinClubRequestAsync",
     "RelativePath": "api/clubs/join",
     "HttpMethod": "POST",
     "IsController": true,
@@ -398,7 +398,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubsMembersAsync",
     "RelativePath": "api/clubs/members/{ClubId}",
     "HttpMethod": "GET",
@@ -414,7 +414,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetMostActiveClubsAsync",
     "RelativePath": "api/clubs/most-active",
     "HttpMethod": "GET",
@@ -424,7 +424,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetNewClubsAsync",
     "RelativePath": "api/clubs/new",
     "HttpMethod": "GET",
@@ -434,7 +434,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "RequestClubCreationAsync",
     "RelativePath": "api/clubs/request-creating",
     "HttpMethod": "POST",
@@ -450,7 +450,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubsPaginatedAsync",
     "RelativePath": "api/clubs/search-by-name",
     "HttpMethod": "GET",
@@ -476,7 +476,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.ClubUserController",
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetClubsTypesAsync",
     "RelativePath": "api/clubs/types",
     "HttpMethod": "GET",
@@ -564,7 +564,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.UserController",
+    "ContainingType": "EventsManagement.Controllers.Student.UserController",
     "Method": "GetAsync",
     "RelativePath": "api/user",
     "HttpMethod": "GET",
@@ -574,7 +574,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.UserController",
+    "ContainingType": "EventsManagement.Controllers.Student.UserController",
     "Method": "GetAsync",
     "RelativePath": "api/user/by-id/{StudentId}",
     "HttpMethod": "GET",
@@ -590,7 +590,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "EventsManagement.Controllers.UserController",
+    "ContainingType": "EventsManagement.Controllers.Student.UserController",
     "Method": "UpdateImageAsync",
     "RelativePath": "api/user/image",
     "HttpMethod": "PUT",

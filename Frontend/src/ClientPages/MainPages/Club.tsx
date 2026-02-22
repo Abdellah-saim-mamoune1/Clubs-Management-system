@@ -59,8 +59,8 @@ export function Club() {
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
           <div className="relative h-64 sm:h-80 w-full">
             <img
-              src={club.imageUrl}
-              alt={club.name}
+              src={"https://snworksceo.imgix.net/bdh/7029fcf1-fa5e-4db4-8f51-5701366d3631.sized-1000x1000.jpg?ar=16%3A9&crop=faces&dpr=2&fit=crop&w=800"}
+           
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gray-700/60 flex flex-col justify-center items-center text-center text-white p-4">

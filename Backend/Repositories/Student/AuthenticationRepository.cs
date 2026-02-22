@@ -2,10 +2,7 @@
 using EventsManagement.Dtos;
 using EventsManagement.Dtos.ProgressDtos;
 using EventsManagement.Interfaces.Repositories.Authentication;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
 using System.Net.Http.Headers;
-using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 
@@ -53,6 +50,10 @@ namespace EventsManagement.Repositories.Student
             }
             catch { throw; }
         }
+
+
+
+
         public async Task<(string? uuid, string? token)> LoginStudentAsync(LoginDto form)
         {
 

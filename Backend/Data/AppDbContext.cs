@@ -16,7 +16,6 @@ namespace EventsManagement.Data
             public DbSet<EventImage> EventImages { get; set; }
             public DbSet<UserClub> UserClubs { get; set; }
             public DbSet<UserEvent> UserEvents { get; set; }
-            public DbSet<Token> Tokens { get; set; }
             public DbSet<ClubRequest> ClubsRequests { get; set; }
             public DbSet<EventRegistration> EventsRegistrations { get; set; }
             public DbSet<ClubJoiningRequest> ClubJoiningRequests { get; set; }

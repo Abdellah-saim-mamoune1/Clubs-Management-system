@@ -42,7 +42,7 @@ export function Students() {
         <div className="bg-white rounded-2xl shadow-md p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6">
        
           <img
-                src={clientInfo.imageUrl}
+                src={"https://wallpapers.com/images/hd/generic-person-icon-profile-ulmsmhnz0kqafcqn-2.jpg"}
                 alt="Profile"
                 className="w-28 h-28 rounded-full border-4 border-blue-600 shadow-md object-contain bg-white"   
           />
@@ -78,7 +78,7 @@ export function Students() {
                   className="bg-white cursor-pointer rounded-xl shadow-md hover:shadow-lg transition p-4 flex flex-col items-center text-center"
                 >
                   <img
-                    src={club.imageUrl}
+                    src={"https://snworksceo.imgix.net/bdh/7029fcf1-fa5e-4db4-8f51-5701366d3631.sized-1000x1000.jpg?ar=16%3A9&crop=faces&dpr=2&fit=crop&w=800"}
                     alt={club.name}
                     className="w-20 h-20 rounded-full object-cover border-2 border-blue-500"
                   />

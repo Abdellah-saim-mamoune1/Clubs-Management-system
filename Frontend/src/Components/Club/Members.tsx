@@ -91,8 +91,8 @@ export function Members({
                   className="flex items-center gap-3 cursor-pointer"
                 >
                   <img
-                    src={m.imageUrl || "https://via.placeholder.com/40"}
-                    alt={m.fullName}
+                    src={"https://wallpapers.com/images/hd/generic-person-icon-profile-ulmsmhnz0kqafcqn-2.jpg"}
+                 
                     className="w-10 h-10 rounded-full object-cover border"
                   />
                   <div>

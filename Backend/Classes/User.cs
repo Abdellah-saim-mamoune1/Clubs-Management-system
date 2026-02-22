@@ -15,7 +15,6 @@ namespace EventsManagement.Classes
         public ICollection<UserEvent>? UserEvents { get; set; } = new List<UserEvent>();
         public ICollection<UserClub>? UserClubs { get; set; } = new List<UserClub>();
         public ICollection<ClubJoiningRequest>? ClubJoiningRequests { get; set; } = new List<ClubJoiningRequest>();
-        public Token? Token { get; set; }
         public RequestedClub? RequestedClub { get; set; }
 
     }

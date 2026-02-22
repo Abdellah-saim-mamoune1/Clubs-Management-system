@@ -226,8 +226,8 @@ export function Clubs() {
                   className="cursor-pointer flex flex-col items-center bg-white border border-gray-300 rounded-lg shadow hover:shadow-md p-4 transition hover:-translate-y-1"
                 >
                   <img
-                    src={club.imageUrl}
-                    alt={club.name}
+                    src={"https://snworksceo.imgix.net/bdh/7029fcf1-fa5e-4db4-8f51-5701366d3631.sized-1000x1000.jpg?ar=16%3A9&crop=faces&dpr=2&fit=crop&w=800"}
+                 
                     className="w-20 h-20 rounded-full object-cover mb-3"
                   />
                   <h3 className="text-sm font-medium text-center">{club.name}</h3>

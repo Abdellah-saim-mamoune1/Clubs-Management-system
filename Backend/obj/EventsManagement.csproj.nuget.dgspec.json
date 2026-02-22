@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\EventsManagement.csproj": {}
+    "C:\\Users\\x395\\Documents\\Projects\\ClubsProject\\Clubs_Management\\Backend\\EventsManagement.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\EventsManagement.csproj": {
+    "C:\\Users\\x395\\Documents\\Projects\\ClubsProject\\Clubs_Management\\Backend\\EventsManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\EventsManagement.csproj",
+        "projectUniqueName": "C:\\Users\\x395\\Documents\\Projects\\ClubsProject\\Clubs_Management\\Backend\\EventsManagement.csproj",
         "projectName": "EventsManagement",
-        "projectPath": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\EventsManagement.csproj",
-        "packagesPath": "C:\\Users\\TADJ TECH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TADJ TECH\\Desktop\\Clubs\\Backend\\obj\\",
+        "projectPath": "C:\\Users\\x395\\Documents\\Projects\\ClubsProject\\Clubs_Management\\Backend\\EventsManagement.csproj",
+        "packagesPath": "C:\\Users\\x395\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\x395\\Documents\\Projects\\ClubsProject\\Clubs_Management\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\TADJ TECH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\x395\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -76,6 +76,10 @@
               "target": "Package",
               "version": "[9.0.9, )"
             },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.22.1, )"
+            },
             "Swashbuckle.AspNetCore.SwaggerGen": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -104,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

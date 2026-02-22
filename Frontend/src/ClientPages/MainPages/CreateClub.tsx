@@ -7,7 +7,6 @@ import {
   CreateClubAPI,
   GetClubsTypesAPI,
 } from "../../APIs/ClubsAPIs";
-import { supabase } from "../../Components/SupaBaseCLient";
 
 interface IClubCreationRequest {
   studentId: number;
@@ -56,24 +55,7 @@ export function CreateClub() {
     else setRequestedBefore(false);
   }, [IsLoggedIn, dispatch]);
 
-  // === Upload image to Supabase and return its public URL ===
-  const uploadImageToSupabase = async (file: File) => {
-    const fileExt = file.name.split(".").pop();
-    const fileName = `club_${form.clubName}_${Date.now()}.${fileExt}`;
-
-    const { error } = await supabase.storage
-      .from("EventsProjectImages")
-      .upload(fileName, file, { cacheControl: "3600", upsert: true });
-
-    if (error) throw error;
-
-    const {
-      data: { publicUrl },
-    } = supabase.storage.from("EventsProjectImages").getPublicUrl(fileName);
-
-    return publicUrl;
-  };
-
+  
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -113,10 +95,10 @@ export function CreateClub() {
     setLoading(true);
     try {
       // 1️⃣ Upload the image
-      const uploadedUrl = await uploadImageToSupabase(selectedFile);
+    
 
       // 2️⃣ Send request with uploaded image URL
-      const requestData = { ...form, ImageUrl: uploadedUrl };
+      const requestData = form;
       const success = await CreateClubAPI(requestData);
 
       if (success) {

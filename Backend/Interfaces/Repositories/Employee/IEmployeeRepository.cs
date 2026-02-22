@@ -9,6 +9,9 @@ namespace EventsManagement.Interfaces.Repositories.Employee
         public Task<List<ClubsRequestsGetDto>> GetClubsRequestsAsync();
         public Task AcceptClubCreationRequest(int RequestId);
         public Task DeleteClubCreationRequest(int RequestId);
-        public Task UpdateRefreshTokenAsync(string Token, int EmployeeId);
+
+        // For sample
+        public Task ClubTypeCreationForSample(string Type);
+        public Task ClubCreationforSample(int StudentId, Classes.Club club);
     }
 }

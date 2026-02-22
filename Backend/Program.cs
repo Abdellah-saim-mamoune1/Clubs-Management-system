@@ -1,4 +1,5 @@
 using EventsManagement.Data;
+using EventsManagement.db_samples;
 using EventsManagement.Interfaces.Repositories.Authentication;
 using EventsManagement.Interfaces.Repositories.Employee;
 using EventsManagement.Interfaces.Repositories.Student;
@@ -26,6 +27,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+//Seeder
+builder.Services.AddScoped<Seeder>();
+
 
 //Services
 
@@ -83,7 +89,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173", "https://clubs-orpin.vercel.app")
+            policy.WithOrigins("http://localhost:5173")
                   .AllowCredentials()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
@@ -93,6 +99,16 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 app.UseCors("AllowReactApp");
+
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var Seeder = scope.ServiceProvider.GetRequiredService<Seeder>();
+
+    await Seeder.Seed();
+}
+
 
 app.UseAuthentication();
 app.UseAuthorization();

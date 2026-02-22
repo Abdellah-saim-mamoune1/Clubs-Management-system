@@ -3,16 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../Slices/Hooks";
 import { GraduationCap, Calendar, Users, Camera, X } from "lucide-react";
 import { Footer } from "../../Components/Footer";
-import { supabase } from "../../Components/SupaBaseCLient";
-import { UpdateStudentImageAPIAsync } from "../../APIs/ClientAPIs";
 import Cropper from "react-easy-crop";
-import { SetNewImageState } from "../../Slices/ClientSlices/ClientInfoSlice";
 
 export function Account() {
   const clientInfo = useAppSelector((s) => s.ClientInfoSlice.ClientInfo);
   const navigate = useNavigate();
   const [uploading, setUploading] = useState(false);
-  const [imageUrl, setImageUrl] = useState(clientInfo?.imageUrl || "");
+  const [imageUrl] = useState(clientInfo?.imageUrl || "");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<any>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -27,37 +24,7 @@ export function Account() {
       </div>
     );
   }
-
-  // Convert cropped area to blob
-  const getCroppedImg = async (imageSrc: string, crop: any): Promise<Blob> => {
-    const image = new Image();
-    image.src = imageSrc;
-    await new Promise((r) => (image.onload = r));
-
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d")!;
-    const scaleX = image.naturalWidth / image.width;
-    const scaleY = image.naturalHeight / image.height;
-
-    canvas.width = crop.width;
-    canvas.height = crop.height;
-    ctx.drawImage(
-      image,
-      crop.x * scaleX,
-      crop.y * scaleY,
-      crop.width * scaleX,
-      crop.height * scaleY,
-      0,
-      0,
-      crop.width,
-      crop.height
-    );
-
-    return new Promise((resolve) =>
-      canvas.toBlob((blob) => resolve(blob!), "image/jpeg", 0.95)
-    );
-  };
-
+  
   // Handle image selection
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -77,42 +44,7 @@ export function Account() {
 
     try {
       setUploading(true);
-      setIsCropping(false); // Hide the form (crop modal)
-
-      // 🗑️ 1. Delete old image if it exists
-      if (imageUrl) {
-        const urlParts = imageUrl.split("/UsersImages/");
-        if (urlParts.length > 1) {
-          const oldFilePath = urlParts[1];
-          const { error: deleteError } = await supabase.storage
-            .from("UsersImages")
-            .remove([oldFilePath]);
-          if (deleteError)
-            console.warn("Failed to delete old image:", deleteError.message);
-        }
-      }
-
-      // ✂️ 2. Crop and upload new image
-      const croppedBlob = await getCroppedImg(previewUrl, croppedAreaPixels);
-      const fileName = `user_${clientInfo.id}_${Date.now()}.jpeg`;
-
-      const { error: uploadError } = await supabase.storage
-        .from("UsersImages")
-        .upload(fileName, croppedBlob, {
-          upsert: true,
-          contentType: "image/jpeg",
-        });
-
-      if (uploadError) throw uploadError;
-
-      // 🌍 3. Get public URL of new image
-      const { data } = supabase.storage
-        .from("UsersImages")
-        .getPublicUrl(fileName);
-        setImageUrl(data.publicUrl);
-         SetNewImageState(data.publicUrl);
-      // 🔁 4. Update user record in your backend
-      await UpdateStudentImageAPIAsync(data.publicUrl);
+      setIsCropping(false); 
       
     } catch (err) {
       console.error("Crop upload failed:", err);
@@ -132,7 +64,7 @@ export function Account() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b border-b-gray-300 pb-6">
             <div className="relative">
               <img
-                src={imageUrl}
+                src={"https://wallpapers.com/images/hd/generic-person-icon-profile-ulmsmhnz0kqafcqn-2.jpg"}
                 alt="Profile"
                 className="w-28 h-28 rounded-full border-4 border-blue-600 shadow-md cursor-pointer object-contain bg-white"
                 onClick={() =>
@@ -199,7 +131,7 @@ export function Account() {
                     className="bg-white border cursor-pointer border-gray-300 rounded-xl shadow hover:shadow-lg transition p-4 flex flex-col items-center text-center hover:-translate-y-1"
                   >
                     <img
-                      src={club.imageUrl}
+                      src={"https://snworksceo.imgix.net/bdh/7029fcf1-fa5e-4db4-8f51-5701366d3631.sized-1000x1000.jpg?ar=16%3A9&crop=faces&dpr=2&fit=crop&w=800"}
                       alt={club.name}
                       className="w-20 h-20 rounded-full object-cover"
                     />

@@ -26,7 +26,7 @@ export function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://localhost:7048/api/authentication/login", {
+      const response = await axios.post("http://localhost:5271/api/authentication/login", {
         username: account,
         password: password,
       });
@@ -46,7 +46,7 @@ export function Login() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center text-gray-800 relative">
       
-      {/* ⚠️ بطاقة التحذير */}
+     
       {showWarning && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
           <div className="bg-blue-100 border border-blue-400 text-blue-800 rounded-xl shadow-lg p-6 w-full max-w-md text-center">

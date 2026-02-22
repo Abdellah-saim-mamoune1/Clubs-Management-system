@@ -61,7 +61,7 @@ export function UpdateClubForm(
          imageUrl: club.imageUrl || "",
        });
      
-       const [imageFile, setImageFile] = useState<File | null>(null);
+    
        const [preview, setPreview] = useState<string>(club.imageUrl || "");
      
       
@@ -71,28 +71,12 @@ export function UpdateClubForm(
        const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
          const file = e.target.files?.[0];
          if (file) {
-           setImageFile(file);
+       
            setPreview(URL.createObjectURL(file));
          }
        };
      
-       // ✅ Upload image to Supabase
-       const uploadImageToSupabase = async (file: File) => {
-         const fileExt = file.name.split(".").pop();
-         const fileName = `club_${updatedClub.clubId}_${Date.now()}.${fileExt}`;
-     
-         const { error } = await supabase.storage
-           .from("EventsProjectImages") // bucket name
-           .upload(fileName, file, { cacheControl: "3600", upsert: true });
-     
-         if (error) throw error;
-     
-         const {
-           data: { publicUrl },
-         } = supabase.storage.from("EventsProjectImages").getPublicUrl(fileName);
-     
-         return publicUrl;
-       };
+   
      
       // ✅ Handle form submission
       const handleUpdate = async () => {
@@ -100,10 +84,7 @@ export function UpdateClubForm(
         try {
           let imageUrl = updatedClub.imageUrl;
     
-          if (imageFile) {
-            imageUrl = await uploadImageToSupabase(imageFile);
-           
-          }
+         
           deleteOldImage(club.imageUrl,)
             await ClubUpdateAPI(UserId, { ...updatedClub, imageUrl });
 

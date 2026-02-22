@@ -175,20 +175,13 @@ namespace EventsManagement.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("HashedPassword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RefreshToken")
+                    b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RefreshTokenExpiryTime")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -333,32 +326,6 @@ namespace EventsManagement.Migrations
                         .IsUnique();
 
                     b.ToTable("RequestedClubs");
-                });
-
-            modelBuilder.Entity("EventsManagement.Classes.Token", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("RefreshToken")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("RefreshTokenExpiryTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("Tokens");
                 });
 
             modelBuilder.Entity("EventsManagement.Classes.User", b =>
@@ -543,17 +510,6 @@ namespace EventsManagement.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EventsManagement.Classes.Token", b =>
-                {
-                    b.HasOne("EventsManagement.Classes.User", "User")
-                        .WithOne("Token")
-                        .HasForeignKey("EventsManagement.Classes.Token", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("EventsManagement.Classes.UserClub", b =>
                 {
                     b.HasOne("EventsManagement.Classes.Club", "Club")
@@ -625,8 +581,6 @@ namespace EventsManagement.Migrations
                     b.Navigation("ClubJoiningRequests");
 
                     b.Navigation("RequestedClub");
-
-                    b.Navigation("Token");
 
                     b.Navigation("UserClubs");
 
