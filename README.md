@@ -45,7 +45,7 @@ Two frontend applications:
 - JWT Authentication
 
 ## Database
-- Postgres
+- Postgres SQL
 
 ## Infrastructure
 - Docker
