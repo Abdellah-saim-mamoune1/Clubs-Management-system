@@ -45,7 +45,7 @@ Two frontend applications:
 - JWT Authentication
 
 ## Database
-- SQL Server
+- Postgres
 
 ## Infrastructure
 - Docker
@@ -118,7 +118,7 @@ After the containers start, you can access the system:
 
 ---
 
-# 🛠 Running Without Docker (Optional)
+# Running Without Docker (Optional)
 
 ## Backend
 
