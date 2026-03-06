@@ -3,13 +3,15 @@
 A full-stack web application for managing university or organizational clubs. Built with **React**, **Tailwind CSS**, and **ASP.NET Core Web API**.
 
 
-![Dashboard Screenshot](./Frontend/assets/screenshot-2763.png) ![Dashboard Screenshot](./Frontend/assets/screenshot-2764.png)
-![Dashboard Screenshot](./Frontend/assets/screenshot-2765.png)
-![Dashboard Screenshot](./Frontend/assets/screenshot-2766.png)
-![Dashboard Screenshot](./Frontend/assets/screenshot-2767.png)
-![Dashboard Screenshot](./Frontend/assets/screenshot-2768.png)
-![Dashboard Screenshot](./Frontend/assets/screenshot-2769.png)
-
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2763.png) ![Dashboard Screenshot](./Frontend/assets/screenshot-2764.png)
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2765.png)
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2766.png)
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2767.png)
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2768.png)
+![Dashboard Screenshot](./StudentFrontend/assets/screenshot-2769.png)
+![Dashboard Screenshot](./AdminFrontend/assets/dash1.png)
+![Dashboard Screenshot](./AdminFrontend/assets/dash2.png)
+![Dashboard Screenshot](./AdminFrontend/assets/dash3.png)
 
 ---
 
