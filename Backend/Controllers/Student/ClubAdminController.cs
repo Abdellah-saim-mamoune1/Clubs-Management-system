@@ -3,6 +3,9 @@ using EventsManagement.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+
+
+
 namespace EventsManagement.Controllers.Student
 {
     [Authorize(Roles = "Student")]

@@ -1,5 +1,5 @@
 ﻿using EventsManagement.Data;
-using EventsManagement.Dtos.Employee;
+using EventsManagement.Dtos;
 using EventsManagement.Interfaces.Repositories.Employee;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,8 +12,6 @@ namespace EventsManagement.Repositories.Employee
         public async Task<StatisticsGetDto> GetAsync()
         {
 
-            try
-            {
                 var StudentsCount = await _db.Users.CountAsync();
                 var ClubsCount = await _db.Clubs.CountAsync();
                 var EventsCount = await _db.Events.CountAsync();
@@ -29,12 +27,6 @@ namespace EventsManagement.Repositories.Employee
                     EventsCount = EventsCount,
                     LastMonthNewClubs = lastMonthNewClubs
                 };
-
-            }
-            catch
-            {
-                throw;
-            }
         }
 
 

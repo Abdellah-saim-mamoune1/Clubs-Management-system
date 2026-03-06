@@ -15,11 +15,15 @@ namespace EventsManagement.Interfaces.Repositories.Student
         public  Task<ClubsGetPaginatedDto> SearchClubsPaginatedAsync(string Name,int PageNumber, int PageSize);
         public  Task<List<ClubTypeGetDto>> GetClubsTypesAsync();
         public  Task<List<EventsGetDto>> GetUpcomingEventsAsync(int UserId);
+        public  Task<List<EventMemeberDto>> GetEventMembersAsync(int eventId);
         public  Task<EventsGetDto> GetEventByIdAsync(int EventId, int UserId);
         public  Task<List<ClubInfoGetDto>> GetNewClubsAsync();
         public  Task<List<ClubInfoGetDto>> GetMostActiveClubsAsync();
         public  Task ViewEventsAsync(int EventId);
         public  Task JoinAnEventAsync(int UserId, int EventId);
+
+        public Task<(byte[]? ImageData, string? ImageContentType)> GetImageAsync(int Id);
+        public Task<(byte[]? ImageData, string? ImageContentType)> GetEventImageAsync(int Id);
 
     }
 }

@@ -7,7 +7,8 @@ namespace EventsManagement.Dtos
         
         public int ClubTypeId { get; set; }
         public string ClubName { get; set; } = string.Empty;
-        public string ImageUrl { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public IFormFile? Image { get; set; } 
 
     }
 }

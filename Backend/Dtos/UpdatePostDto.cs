@@ -9,6 +9,9 @@
         public string From { get; set; } = string.Empty;
         public string To { get; set; } = string.Empty;
         public string Address { get; set; } = string.Empty;
+
+        public IFormFile? Image { get; set; }
+
         public bool IsPrivate { get; set; }
         public int MaxRegistrationCount { get; set; }
     }

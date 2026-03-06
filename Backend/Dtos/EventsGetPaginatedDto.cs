@@ -19,6 +19,7 @@
         public bool IsPrivate { get; set; }
         public int Views { get; set; }
         public bool IsStudentJoined { get; set; }
+        public bool IsStudentMember { get; set; }
         public bool IsStudentAdmin { get; set; }
         public int ClubId { get; set; }
         public string ClubName { get; set; } = string.Empty;

@@ -180,6 +180,14 @@ namespace EventsManagement.Controllers.Student
                 return BadRequest(data);
         }
 
+        [HttpGet("events/members{eventId}")]
+        public async Task<IActionResult> GetEventMembersAsync(int eventId)
+        {
+
+            var data = await _ClubUserService.GetEventMemebersAsync(eventId);
+            return StatusCode(data.Status,data);
+        }
+
         [HttpGet("by-type/")]
         public async Task<IActionResult> GetClubsByTypeAsync([FromQuery] int typeId, [FromQuery] string? name = "")
         {
@@ -289,6 +297,32 @@ namespace EventsManagement.Controllers.Student
 
             else
                 return BadRequest(data);
+        }
+
+
+
+
+        [HttpGet("{id}/image")]
+        public async Task<IActionResult> GetClubImage(int id)
+        {
+            var Image = await _ClubUserService.GetImageAsync(id);
+
+            if (Image.ImageData == null || Image.ImageContentType == null)
+                return NotFound();
+
+            return File(Image.ImageData, Image.ImageContentType);
+        }
+
+
+        [HttpGet("event/{id}/image")]
+        public async Task<IActionResult> GetEventmage(int id)
+        {
+            var Image = await _ClubUserService.GetEventImageAsync(id);
+
+            if (Image.ImageData == null || Image.ImageContentType == null)
+                return NotFound();
+
+            return File(Image.ImageData, Image.ImageContentType);
         }
 
     }

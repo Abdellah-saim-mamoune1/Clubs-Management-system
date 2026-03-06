@@ -12,6 +12,6 @@
         public string Address { get; set; } = string.Empty;
         public bool AcceptRegistration { get; set; }
         public int MaxRegistrationsCount { get; set; }
-        public Club? Club { get; set; }
+      //  public Club? Club { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using EventsManagement.Data;
 using EventsManagement.Dtos;
-using EventsManagement.Dtos.ProgressDtos;
 using EventsManagement.Interfaces.Repositories.Authentication;
 using System.Net.Http.Headers;
 using System.Text;
@@ -42,7 +41,7 @@ namespace EventsManagement.Repositories.Student
                     Degree = data.Degree,
                     YearOfDegree = data.YearOfDegree,
                     FullName = data.FullName,
-                    ImageUrl = data.ImageUrl,
+                 //   ImageUrl = data.ImageUrl,
                 };
                 _db.Add(user);
                 await _db.SaveChangesAsync();
@@ -121,7 +120,7 @@ namespace EventsManagement.Repositories.Student
                 Age = CalculateAge(DateTime.Parse(student.individuDateNaissance)),
                 Degree = student.niveauLibelleLongLt,
                 YearOfDegree = student.anneeAcademiqueCode,
-                ImageUrl = $"/api/infos/image/{student.uuid}"
+             
             };
         }
 

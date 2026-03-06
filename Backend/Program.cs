@@ -5,6 +5,7 @@ using EventsManagement.Interfaces.Repositories.Employee;
 using EventsManagement.Interfaces.Repositories.Student;
 using EventsManagement.Interfaces.Services;
 using EventsManagement.Interfaces.Services.Employee;
+using EventsManagement.Middlewares;
 using EventsManagement.Repositories;
 using EventsManagement.Repositories.Club;
 using EventsManagement.Repositories.Employee;
@@ -89,7 +90,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5173","http://localhost:3002")
+            policy.WithOrigins("http://localhost:3002", "http://localhost:3003")
                   .AllowCredentials()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
@@ -98,6 +99,10 @@ builder.Services.AddCors(options =>
 
 
 var app = builder.Build();
+
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.UseCors("AllowReactApp");
 
 using (var scope = app.Services.CreateScope())

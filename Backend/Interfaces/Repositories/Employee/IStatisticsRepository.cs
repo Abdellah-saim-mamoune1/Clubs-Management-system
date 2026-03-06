@@ -1,4 +1,4 @@
-﻿using EventsManagement.Dtos.Employee;
+﻿using EventsManagement.Dtos;
 
 namespace EventsManagement.Interfaces.Repositories.Employee
 {

@@ -50,7 +50,7 @@ namespace EventsManagement.db_samples
                     Degree = student.Degree,
                     YearOfDegree = student.YearOfDegree,
                     FullName = student.FullName,
-                    ImageUrl = student.ImageUrl,
+                  //  ImageUrl = student.ImageUrl,
                 };
                 _db.Add(user);
                 await _db.SaveChangesAsync();

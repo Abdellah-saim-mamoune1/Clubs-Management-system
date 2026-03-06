@@ -1,21 +1,20 @@
 ﻿using EventsManagement.Data;
 using EventsManagement.Dtos;
-using EventsManagement.Dtos.Employee;
 using EventsManagement.Interfaces.Repositories.Employee;
 using Microsoft.EntityFrameworkCore;
 using EventsManagement.Classes;
+using Microsoft.Extensions.Caching.Memory;
 
 
 namespace EventsManagement.Repositories.Employee
 {
-    public class EmployeeRepository(AppDbContext _db) : IEmployeeRepository
+    public class EmployeeRepository(AppDbContext _db, IMemoryCache _cache) : IEmployeeRepository
     {
 
 
         public async Task<EmployeeInfoGetDto> GetInfoById(int Id)
         {
-            try
-            {
+           
                 return await _db.Employees.Where(e => e.Id == Id)
                     .Select(e => new EmployeeInfoGetDto
                     {
@@ -25,51 +24,44 @@ namespace EventsManagement.Repositories.Employee
 
                     })
                     .FirstAsync();
-            }
-            catch
-            {
-                throw;
-            }
+       
         }
 
         public async Task<List<ClubsRequestsGetDto>> GetClubsRequestsAsync()
         {
-            try
-            {
+         
                 return await _db.RequestedClubs
                     .Select(c => new ClubsRequestsGetDto
                     {
                         StudentId=c.StudentId,
                         ClubName=c.ClubName,
                         ClubTypeId=c.ClubTypeId,
-                        ImageUrl=c.ImageUrl,
-                        CreatedAt=c.CreatedAt
+                        Description=c.Description,
+                        CreatedAt=c.CreatedAt,
+                        RequestId=c.Id
 
                     })
                     .ToListAsync();
-            }
-            catch
-            {
-                throw;
-            }
         }
 
         public async Task AcceptClubCreationRequest(int RequestId)
         {
-            try
-            {
+            
                 await _db.Database.CreateExecutionStrategy().ExecuteAsync(async () =>
                 {
                     await using var transaction = await _db.Database.BeginTransactionAsync();
                     var request = await _db.RequestedClubs.FirstAsync(r => r.Id == RequestId);
                     Classes.Club club = new Classes.Club
                     {
-                        Id = RequestId,
-                        Name = request.ClubName,
-                        ImageUrl = request.ImageUrl,
-                        TypeId = request.ClubTypeId,
 
+                        Name = request.ClubName,
+                        ImageContentType = request.ImageContentType,
+                        ImageData= request.ImageData,
+                        Description = request.Description,
+                        TypeId = request.ClubTypeId,
+                       
                     };
+
                     _db.Add(club);
                     await _db.SaveChangesAsync();
 
@@ -79,15 +71,31 @@ namespace EventsManagement.Repositories.Employee
                     await _db.SaveChangesAsync();
 
                     await DeleteClubCreationRequest(request.Id);
+
+                    _cache.Remove("MostActiveClubs");
+                    _cache.Remove("NewClubs");
+
                     await transaction.CommitAsync();
 
                 });
-            }
-            catch
-            {
-                throw;
-            }
+         
         }
+
+        public async Task<List<StudentsGetDto>> GetStudentsAsync()
+        {
+                return await _db.Users
+                    .Select(c => new StudentsGetDto
+                    {
+                     Id=c.Id,
+                     Age=c.Age,
+                     Degree=c.Degree,
+                     FullName=c.FullName
+                    })
+                    .ToListAsync();
+          
+        }
+
+        
 
         // For sample
         public async Task ClubTypeCreationForSample(string Type)
@@ -100,8 +108,7 @@ namespace EventsManagement.Repositories.Employee
         // For sample
         public async Task ClubCreationforSample(int StudentId, Classes.Club club)
         {
-            try
-            {
+           
                 await _db.Database.CreateExecutionStrategy().ExecuteAsync(async () =>
                 {
                     await using var transaction = await _db.Database.BeginTransactionAsync();
@@ -119,33 +126,29 @@ namespace EventsManagement.Repositories.Employee
                     await transaction.CommitAsync();
 
                 });
-            }
-            catch
-            {
-                throw;
-            }
         }
 
 
         public async Task DeleteClubCreationRequest(int RequestId)
         {
-            try
-            {
+           
                 var request = await _db.RequestedClubs.FirstAsync(r => r.Id == RequestId);
 
                 _db.Remove(request);
                 await _db.SaveChangesAsync();
 
-            }
-            catch
-            {
-                throw;
-            }
+          
         }
 
 
-   
 
+        public async Task<(byte[]? ImageData, string? ImageContentType)> GetClubRequestImageAsync(int Id)
+        {
+
+            var Club = await _db.RequestedClubs.FirstAsync(u => u.Id == Id);
+            return (Club.ImageData, Club.ImageContentType);
+
+        }
 
     }
 }

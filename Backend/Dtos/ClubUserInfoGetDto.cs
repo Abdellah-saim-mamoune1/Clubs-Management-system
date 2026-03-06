@@ -7,7 +7,6 @@
         public int Age { get; set; }
         public string Degree { get; set; } = string.Empty;
         public string YearOfDegree { get; set; } = string.Empty;
-        public string ImageUrl { get; set; } = string.Empty;
         public bool IsAdmin { get; set; }
         public DateOnly JoinedAt { get; set; }
     }

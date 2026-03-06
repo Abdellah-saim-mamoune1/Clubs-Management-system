@@ -5,6 +5,7 @@ using EventsManagement.Interfaces.Repositories.Student;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 
+
 namespace EventsManagement.Repositories.Club
 {
     public class ClubAdminRepository(AppDbContext _db,IMemoryCache _cache) : IClubAdminRepository
@@ -13,59 +14,65 @@ namespace EventsManagement.Repositories.Club
 
         public async Task UpdateClubInfoAsync(ClubUpdateDto form)
         {
-            try
-            {
+           
+
                 var club = await _db.Clubs.AsQueryable().FirstAsync(c => c.Id == form.ClubId);
                 club.Name = form.Name;
                 club.Description=form.Description;
                 club.OpenForRegistrations = form.OpenForRegistrations;
                 club.TypeId=form.TypeId;
-                club.ImageUrl=form.ImageUrl;
-                await _db.SaveChangesAsync();
+
+
+                if (form.image == null)
+                {
+                    
+                    club.ImageContentType = null;
+                    club.ImageData = null;
+
+                }
+
+                else
+                {
+                    using var memoryStream = new MemoryStream();
+                    await form.image.CopyToAsync(memoryStream);
+
+                    club.ImageContentType = form.image.ContentType;
+                    club.ImageData = memoryStream.ToArray();
+                }
+
+                 await _db.SaveChangesAsync();
                 _cache.Remove("MostActiveClubs");
                 _cache.Remove("NewClubs");
-            }
-            catch
-            {
-                throw;
-            }
+            
+          
         }
         public async Task SetMemberAsAdminAsync(int UserId,int ClubId)
         {
-            try
-            {
+            
+            
                 var user = await _db.UserClubs.AsQueryable().FirstAsync(u => u.ClubId == ClubId && u.UserId == UserId);
                 user.Role = "Admin";
 
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
+          
         }
 
         public async Task RemoveMemberAsync(int UserId, int ClubId)
         {
-            try
-            {
+          
                 var user = await _db.UserClubs.AsQueryable().FirstAsync(u => u.ClubId == ClubId && u.UserId == UserId);
 
 
                 _db.Remove(user);
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
+          
         }
 
 
         public async Task<ClubJoiningRequestPaginatedGetDto> GetCandidatesApplicationsPaginatedAsync(int ClubId,int PageNumber,int PageSize)
         {
-            try
-            {
+            
+
                 var Allapplications =  _db.ClubJoiningRequests.Include(r => r.User).AsQueryable();
                 var applications=await Allapplications.
                     Where(r => r.ClubId == ClubId).Select(r=>new ClubJoiningRequestGetDto
@@ -75,26 +82,21 @@ namespace EventsManagement.Repositories.Club
                         StudentMotivation = r.Motivation,
                         Date = r.CreatedAt,
                         StudentId=r.StudentId,
-                        StudentImageUrl=r.User!.ImageUrl,
-                        StudentName=r.User.FullName
+                   
+                        StudentName=r.User!.FullName
                     })
                     .Skip((PageNumber - 1) * PageSize)
                     .Take(PageSize)
                     .ToListAsync();
 
                 return new ClubJoiningRequestPaginatedGetDto { Applications=applications,TotalCount=Allapplications.Count()};
-            }
-            catch
-            {
-                throw;
-            }
+            
         }
 
 
         public async Task AcceptCandidateApplicationAsync(int ApplicationId,int StudentId, int ClubId)
         {
-            try
-            {
+          
                 await _db.Database.CreateExecutionStrategy().ExecuteAsync(async () =>
                 {
                     await using var transaction = await _db.Database.BeginTransactionAsync();
@@ -104,29 +106,17 @@ namespace EventsManagement.Repositories.Club
                     await RefuseCandidateApplicationAsync(ApplicationId);
                     await transaction.CommitAsync();
                 });
-             
-            }
-            catch
-            {
-                throw;
-            }
+          
         }
 
         public async Task RefuseCandidateApplicationAsync(int ApplicationId)
         {
-            try
-            {
 
                
                 var JoiningRequest = await _db.ClubJoiningRequests.FirstAsync(c => c.Id== ApplicationId);
                 _db.Remove(JoiningRequest);
                 await _db.SaveChangesAsync();
 
-            }
-            catch
-            {
-                throw;
-            }
         }
 
 
@@ -134,8 +124,7 @@ namespace EventsManagement.Repositories.Club
         public async Task RequestEventAsync(ClubRequestEventDto form)
         {
 
-            try
-            {
+        
                 await _db.Database.CreateExecutionStrategy().ExecuteAsync(async () =>
                 {
                     await using var transaction = await _db.Database.BeginTransactionAsync();
@@ -175,17 +164,14 @@ namespace EventsManagement.Repositories.Club
                     
                 });
 
-            }
-            catch { throw; }
-
+           
         }
 
 
         
         public async Task DeletePostAsync(int Id)
         {
-            try
-            {
+        
                 await _db.Database.CreateExecutionStrategy().ExecuteAsync(async () =>
                 {
                     await using var transaction = await _db.Database.BeginTransactionAsync();
@@ -207,15 +193,12 @@ namespace EventsManagement.Repositories.Club
                     _cache.Remove("NewClubs");
                     await transaction.CommitAsync();
                 });
-            }
-            catch { throw; }
-
+         
         }
 
         public async Task UpdatePostAsync(UpdatePostDto form)
         {
-            try
-            {
+          
                 var Post = await _db.Events.Include(e=>e.EventRegistration).FirstAsync(c => c.Id == form.Id);
                 Post.Description = form.Content;
                 Post.Title=form.Title;
@@ -225,11 +208,32 @@ namespace EventsManagement.Repositories.Club
                 Post.IsPrivate = form.IsPrivate;
                 Post.To=form.To;
                 Post.EventRegistration!.MaxRegistrationsCount = form.MaxRegistrationCount;
-                _cache.Remove("UpcomingEvents");
-                await _db.SaveChangesAsync();
-            }
-            catch { throw; }
 
+
+
+                if (form.Image == null)
+                {
+
+                    Post.ImageContentType = null;
+                    Post.ImageData = null;
+
+                }
+
+                else
+                {
+                    using var memoryStream = new MemoryStream();
+                    await form.Image.CopyToAsync(memoryStream);
+
+                    Post.ImageContentType = form.Image.ContentType;
+                    Post.ImageData = memoryStream.ToArray();
+                }
+
+
+                _cache.Remove("UpcomingEvents");
+                _cache.Remove("MostActiveClubs");
+                _cache.Remove("NewClubs");
+                await _db.SaveChangesAsync();
+         
         }
     }
 }

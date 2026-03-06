@@ -2,6 +2,6 @@
 {
     public class UserUpdateImageDto
     {
-        public string ImageUrl { get; set; }=string.Empty;
+        public IFormFile? ImageUrl { get; set; }
     }
 }

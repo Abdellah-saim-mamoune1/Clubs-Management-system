@@ -5,6 +5,7 @@ namespace EventsManagement.Interfaces.Repositories.Student
     public interface IStudentRepository
     {
         public  Task<StudentGetDto?> GetAsync(int Id);
-        public  Task UpdateImageAsync(int Id, string ImageUrl);
+        public  Task UpdateImageAsync(int Id, string ContentType, byte[] ImageData);
+        public  Task<(byte[]? ImageData, string? ImageContentType)> GetImageAsync(int Id);
     }
 }

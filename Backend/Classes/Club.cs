@@ -9,14 +9,15 @@ namespace EventsManagement.Classes
 
         [ForeignKey("ClubType")]
         public int TypeId { get; set; }
-        public string ImageUrl { get; set; } = string.Empty;
+        public string? ImageContentType { get; set; }
+        public byte[]? ImageData { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Description { get; set; } = string.Empty;
         public bool OpenForRegistrations { get; set; }
         public ClubType? ClubType { get; set; }
         public RequestedClub? RequestedClub { get; set; }
         public ICollection<Event> Events { get; set; } = new List<Event>();
-        public ICollection<ClubRequest> Requests { get; set; } = new List<ClubRequest>();
+      //  public ICollection<ClubRequest> Requests { get; set; } = new List<ClubRequest>();
         public ICollection<UserClub> UserClubs { get; set; } = new List<UserClub>();
         public ICollection<ClubJoiningRequest>? ClubJoiningRequests { get; set; } = new List<ClubJoiningRequest>();
 

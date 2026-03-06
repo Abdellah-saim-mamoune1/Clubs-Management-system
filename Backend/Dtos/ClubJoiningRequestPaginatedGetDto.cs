@@ -12,7 +12,6 @@
         public int ApplicationId { get; set; }
         public int StudentId { get; set; }
         public string StudentName { get; set; }=string.Empty;
-        public string StudentImageUrl { get; set; } = string.Empty;
         public string StudentEmail { get; set; } = string.Empty;
         public string StudentMotivation { get; set; }=string.Empty;
         public DateOnly Date { get; set; }

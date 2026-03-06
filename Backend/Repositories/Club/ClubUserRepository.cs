@@ -11,9 +11,7 @@ namespace EventsManagement.Repositories.Club
     {
         public async Task JoiningClubRequest(ClubJoiningRequestSetDto form)
         {
-            try
-            {
-
+         
                 ClubJoiningRequest request = new ClubJoiningRequest
                 {
                     StudentId = form.StudentId,
@@ -24,35 +22,42 @@ namespace EventsManagement.Repositories.Club
 
                 _db.Add(request);
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
 
         }
 
         public async Task RequestClubCreationAsync(int StudentId,ClubRequestCreationDto form)
         {
-            try
-            {
 
                 RequestedClub request = new RequestedClub
                 { 
                    StudentId=StudentId,
                    ClubName=form.ClubName,
+                   Description=form.Description,
                    ClubTypeId=form.ClubTypeId,
-                   ImageUrl=form.ImageUrl
+               
                 };
+
+
+                if (form.Image == null)
+                {
+
+                    request.ImageContentType = null;
+                    request.ImageData = null;
+
+                }
+
+                else
+                {
+                    using var memoryStream = new MemoryStream();
+                    await form.Image.CopyToAsync(memoryStream);
+
+                    request.ImageContentType = form.Image.ContentType;
+                    request.ImageData = memoryStream.ToArray();
+                }
 
                 _db.Add(request);
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
-
+     
         }
 
         
@@ -94,6 +99,21 @@ namespace EventsManagement.Repositories.Club
         }
 
 
+        public async Task<List<EventMemeberDto>> GetEventMembersAsync(int eventId)
+        {
+
+
+           var data= await _db.UserEvents.Include(e=>e.User).Where(e => e.EventId == eventId).Select(e => new EventMemeberDto
+            {
+                UserId = e.User!.Id,
+                FullName = e.User.FullName,
+
+            }).ToListAsync();
+
+
+            return data;
+        }
+
         public async Task<List<ClubInfoGetDto>> GetNewClubsAsync()
         {
             const string cacheKey = "NewClubs";
@@ -113,7 +133,7 @@ namespace EventsManagement.Repositories.Club
                .Select(c => new ClubInfoGetDto
              {
            Id = c.Id,
-           ImageUrl = c.ImageUrl,
+     
            Name = c.Name,
            Type = c.ClubType!.Type,
            Description = c.Description,
@@ -146,7 +166,7 @@ namespace EventsManagement.Repositories.Club
                 .Select(c => new ClubInfoGetDto
                 {
                     Id = c.Id,
-                    ImageUrl = c.ImageUrl,
+               
                     Name = c.Name,
                     Type = c.ClubType!.Type,
                     Description = c.Description,
@@ -165,8 +185,7 @@ namespace EventsManagement.Repositories.Club
 
         public async Task<EventsGetDto> GetEventByIdAsync(int UserId,int EventId)
         {
-            try
-            {
+           
                 var Event = await _db.Events.Include(e => e.Club).ThenInclude(e=>e.UserClubs).Include(e => e.EventRegistration)
                     .Where(c => c.Id==EventId)
                     .Select(e => new EventsGetDto
@@ -181,8 +200,9 @@ namespace EventsManagement.Repositories.Club
                         Views = e.Views,
                         ClubId=e.ClubId,
                         ClubName = e.Club!.Name,
+                        IsStudentMember = e.Club.UserClubs.Any(c => c.ClubId == e.ClubId && c.UserId == UserId),
                         IsStudentJoined = e.UserEvents == null ? false : e.UserEvents.Any(U => U.UserId == UserId && U.EventId == e.Id),
-                        IsStudentAdmin = e.Club.UserClubs.Any(c => c.ClubId == e.ClubId && c.UserId == UserId),
+                        IsStudentAdmin = e.Club.UserClubs.Any(c => c.ClubId == e.ClubId && c.UserId == UserId&&c.Role=="Admin"),
                         RegistrationInfo = e.EventRegistration == null ? null : new RegistrationInfoDto
                         {
                             CurrentRegistrationsCount = e.EventRegistration.CurrentRegistrationsCount,
@@ -194,18 +214,13 @@ namespace EventsManagement.Repositories.Club
                     }).FirstAsync();
 
                 return Event;
-            }
-            catch
-            {
-                throw;
-            }
+      
         }
 
         public async Task<ClubInfoGetDto> GetClubByIdAsync(int UserId,int Id)
         {
 
-            try
-            {
+       
                 
                     string JoiningStatus = "NotJoined";
                     string Role = "None";
@@ -228,7 +243,7 @@ namespace EventsManagement.Repositories.Club
                     .Include(c => c.UserClubs).Where(c=>c.Id==Id).Select(c => new ClubInfoGetDto
                 {
                     Id = c.Id,
-                    ImageUrl = c.ImageUrl,
+               
                     Name = c.Name,
                     Type = c.ClubType!.Type,
                     Description = c.Description,
@@ -240,18 +255,14 @@ namespace EventsManagement.Repositories.Club
                     MembersNumber = c.UserClubs!.Count(),
 
                 }).FirstAsync();
-            }
-            catch
-            {
-                throw;
-            }
+      
+            
         }
      
 
         public async Task<List<ClubUserInfoGetDto>> GetClubsMembersAsync(int ClubId)
         {
-            try
-            {
+   
                 return await _db.UserClubs.Include(c => c.User).Where(c => c.ClubId == ClubId).Select(c => new ClubUserInfoGetDto
                 {
                     Id = c.UserId,
@@ -259,52 +270,40 @@ namespace EventsManagement.Repositories.Club
                     Degree=c.User.Degree,
                     FullName=c.User.FullName,
                     YearOfDegree=c.User.YearOfDegree,
-                    ImageUrl = c.User.ImageUrl,
                     IsAdmin = c.Role == "Admin",
                     JoinedAt = c.JoinedAt
 
                 }).ToListAsync();
-            }
-            catch
-            {
-                throw;
-            }
+         
         }
 
         public async Task<ClubsGetPaginatedDto> SearchClubsPaginatedAsync(string Name,int PageNumber,int PageSize)
         {
 
-            try
-            {
+          
                 var Clubs= await _db.Clubs.Include(c => c.ClubType).Include(c => c.Events)
                     .Include(c => c.UserClubs)
                     .Where(c=>Name==""?true:c.Name.ToLower().Contains(Name.ToLower()))
                     .Select(c => new ClubInfoGetDto
                     {
                         Id = c.Id,
-                        ImageUrl = c.ImageUrl,
                         Name = c.Name,
                         Type = c.ClubType!.Type,
                         Description = c.Description,
                         EventsNumber = c.Events == null ? 0 : c.Events.Count(),
                         MembersNumber = c.UserClubs!.Count(),
 
-                    }).Skip((PageNumber-1)*PageSize).Take(PageSize).ToListAsync();
+                    }).ToListAsync();
 
                 return new ClubsGetPaginatedDto { TotalCount = Clubs.Count, Clubs = Clubs };
-            }
-            catch
-            {
-                throw;
-            }
+   
         }
 
     
 
         public async Task<List<EventsGetDto>> GetClubEventsPaginatedAsync(int UserId, int ClubId)
         {
-            try
-            {
+       
                 var AllEvents = _db.Events.AsQueryable();
                 bool IsUserMember = await _db.UserClubs.AnyAsync(c => c.ClubId == ClubId && c.UserId == UserId);
                 var Events = await _db.Events.Include(c=>c.Club).Include(e => e.EventRegistration)
@@ -335,18 +334,13 @@ namespace EventsManagement.Repositories.Club
 
                 return Events;
               
-            }
-            catch
-            {
-                throw;
-            }
-
+      
         }
 
         public async Task<EventsGetPaginatedDto> SearchEventsByNamePaginatedAsync(string Query, int PageNumber, int PageSize)
         {
-            try
-            {
+            
+            
                 var AllEvents = _db.Events.AsQueryable();
 
                 var Events = await _db.Events.Include(c => c.Club).Include(e => e.EventRegistration)
@@ -377,12 +371,6 @@ namespace EventsManagement.Repositories.Club
 
                 return new EventsGetPaginatedDto {Events=Events,TotalPages=AllEvents.Count() };
 
-            }
-            catch
-            {
-                throw;
-            }
-
         }
 
 
@@ -391,15 +379,13 @@ namespace EventsManagement.Repositories.Club
 
         public async Task<List<ClubInfoGetDto>> GetClubsByTypeAsync(int TypeId,string Name)
         {
-            try
-            {
+          
                 return await _db.Clubs.Include(c => c.ClubType).Include(c => c.Events)
                     .Include(c => c.UserClubs).Where(c => c.TypeId == TypeId)
                     .Where(c => Name == "" ? true : c.Name.ToLower().Contains(Name.ToLower()))
                     .Select(c => new ClubInfoGetDto
                 {
                     Id = c.Id,
-                    ImageUrl = c.ImageUrl,
                     Name = c.Name,
                     Type = c.ClubType!.Type,
                     Description = c.Description,
@@ -407,65 +393,65 @@ namespace EventsManagement.Repositories.Club
                     MembersNumber = c.UserClubs!.Count(),
 
                 }).ToListAsync();
-            }
-            catch
-            {
-                throw;
-            }
+     
         }
 
         public async Task<List<ClubTypeGetDto>> GetClubsTypesAsync()
         {
-            try
-            {
+            
                 return await _db.ClubTypes.Include(c => c.Clubs).AsQueryable().Select(c => new ClubTypeGetDto
                 {
                     Id = c.Id,
                     Type = c.Type,
                     ClubsNumber = c.Clubs == null ? 0 : c.Clubs.Count()
                 }).ToListAsync();
-            }
-            catch
-            {
-                throw;
-            }
+        
         }
 
 
         public async Task ViewEventsAsync(int EventId)
         {
-            try
-            {
+            
                 var Event = await _db.Events.FirstAsync(e => e.Id == EventId);
                 Event.Views++;
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
+         
         }
 
         public async Task JoinAnEventAsync(int UserId,int EventId)
         {
-            try
-            {
+            
                 var Event = await _db.Events.Include(e=>e.EventRegistration).FirstAsync(e => e.Id == EventId);
                 var UserEvent = new UserEvent
                 {
-                    EventId = Event.Id,
+                    EventId = EventId,
                     UserId = UserId
                 };
                if( Event.EventRegistration!=null)
                     Event.EventRegistration.CurrentRegistrationsCount++;
-                _db.Add(UserEvent);
+
+                _db.UserEvents.Add(UserEvent);
                 await _db.SaveChangesAsync();
-            }
-            catch
-            {
-                throw;
-            }
+          
         }
 
+
+
+        public async Task<(byte[]? ImageData, string? ImageContentType)> GetImageAsync(int Id)
+        {
+            
+                var Club = await _db.Clubs.FirstAsync(u => u.Id == Id);
+                return (Club.ImageData, Club.ImageContentType);
+          
+        }
+
+
+        public async Task<(byte[]? ImageData, string? ImageContentType)> GetEventImageAsync(int Id)
+        {
+
+            var Club = await _db.Clubs.FirstAsync(u => u.Id == Id);
+            return (Club.ImageData, Club.ImageContentType);
+
+        }
     }
 }

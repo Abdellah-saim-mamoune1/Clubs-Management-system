@@ -13,7 +13,6 @@ namespace EventsManagement.Data
             public DbSet<Club> Clubs { get; set; }
             public DbSet<ClubType> ClubTypes { get; set; }
             public DbSet<Event> Events { get; set; }
-            public DbSet<EventImage> EventImages { get; set; }
             public DbSet<UserClub> UserClubs { get; set; }
             public DbSet<UserEvent> UserEvents { get; set; }
             public DbSet<ClubRequest> ClubsRequests { get; set; }

@@ -2,6 +2,7 @@
 using EventsManagement.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace EventsManagement.Controllers.Student
@@ -26,10 +27,10 @@ namespace EventsManagement.Controllers.Student
 
         [Authorize(Roles = "Student")]
         [HttpPut("image/")]
-        public async Task<IActionResult> UpdateImageAsync(UserUpdateImageDto form)
+        public async Task<IActionResult> UpdateImageAsync(IFormFile image)
         {
             var Id = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
-            var data = await _UserService.UpdateImageAsync(int.Parse(Id),form.ImageUrl);
+            var data = await _UserService.UpdateImageAsync(int.Parse(Id), image);
 
             if (data.Status == 200)
                 return Ok(data);
@@ -47,6 +48,19 @@ namespace EventsManagement.Controllers.Student
                 return Ok(data);
 
             return BadRequest(data);
+        }
+
+
+
+        [HttpGet("{id}/image")]
+        public async Task<IActionResult> GetStudentImage(int id)
+        {
+            var Image = await _UserService.GetImageAsync(id);
+
+            if (Image.ImageData == null||Image.ImageContentType==null)
+                return NotFound();
+
+            return File(Image.ImageData, Image.ImageContentType);
         }
     }
 }

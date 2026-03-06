@@ -1,5 +1,4 @@
 ﻿using EventsManagement.Dtos;
-using EventsManagement.Dtos.Employee;
 
 namespace EventsManagement.Interfaces.Services
 {

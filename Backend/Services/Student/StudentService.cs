@@ -18,20 +18,25 @@ namespace EventsManagement.Services.User
 
         }
 
-        public async Task<ServiceResponseDto<StudentGetDto?>> UpdateImageAsync(int Id,string ImageUrl)
+        public async Task<ServiceResponseDto<StudentGetDto?>> UpdateImageAsync(int Id,IFormFile image)
         {
-            try
-            {
-                await _UserRepository.UpdateImageAsync(Id, ImageUrl);
+      
+                using var memoryStream = new MemoryStream();
+                await image.CopyToAsync(memoryStream);
+
+                await _UserRepository.UpdateImageAsync(Id, image.ContentType, memoryStream.ToArray());
+
                 return new ServiceResponseDto<StudentGetDto?> { Status = 200 };
-            }
-            catch
-            {
-                return new ServiceResponseDto<StudentGetDto?> { Status = 500 };
+            
 
-            }
-              
+        }
 
+
+        public async Task<(byte[]? ImageData, string? ImageContentType)> GetImageAsync(int Id)
+        {
+          
+                return  await _UserRepository.GetImageAsync(Id) ;
+            
         }
     }
 }

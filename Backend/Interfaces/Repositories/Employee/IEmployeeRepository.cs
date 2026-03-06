@@ -1,5 +1,4 @@
 ﻿using EventsManagement.Dtos;
-using EventsManagement.Dtos.Employee;
 
 namespace EventsManagement.Interfaces.Repositories.Employee
 {
@@ -9,6 +8,8 @@ namespace EventsManagement.Interfaces.Repositories.Employee
         public Task<List<ClubsRequestsGetDto>> GetClubsRequestsAsync();
         public Task AcceptClubCreationRequest(int RequestId);
         public Task DeleteClubCreationRequest(int RequestId);
+        public Task<(byte[]? ImageData, string? ImageContentType)> GetClubRequestImageAsync(int Id);
+        public Task<List<StudentsGetDto>> GetStudentsAsync();
 
         // For sample
         public Task ClubTypeCreationForSample(string Type);

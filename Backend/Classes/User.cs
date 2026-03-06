@@ -11,7 +11,9 @@ namespace EventsManagement.Classes
         public int Age { get; set; }
         public string Degree { get; set; } = string.Empty;
         public string YearOfDegree { get; set; } = string.Empty;
-        public string ImageUrl { get; set; } = string.Empty;
+        public string? ImageContentType { get; set; }
+        public byte[]? ImageData { get; set; }
+
         public ICollection<UserEvent>? UserEvents { get; set; } = new List<UserEvent>();
         public ICollection<UserClub>? UserClubs { get; set; } = new List<UserClub>();
         public ICollection<ClubJoiningRequest>? ClubJoiningRequests { get; set; } = new List<ClubJoiningRequest>();

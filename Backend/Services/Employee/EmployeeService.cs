@@ -1,6 +1,5 @@
 ﻿using EventsManagement.Data;
 using EventsManagement.Dtos;
-using EventsManagement.Dtos.Employee;
 using EventsManagement.Helpers;
 using EventsManagement.Interfaces.Repositories.Employee;
 using EventsManagement.Interfaces.Services.Employee;
@@ -16,27 +15,17 @@ namespace EventsManagement.Services.Employee
     {
         public async Task<ServiceResponseDto<EmployeeInfoGetDto>> GetInfoByIdAsync(int Id)
         {
-            try
-            {
-                
+         
                 var data = await _EmployeeRepository.GetInfoById(Id);
 
                 return new ServiceResponseDto<EmployeeInfoGetDto> { Data = data, Status = 200 };
 
-            }
-            catch
-            {
-                return new ServiceResponseDto<EmployeeInfoGetDto> { Status = 500 };
-            }
-
-
         }
 
 
-        public async Task<ServiceResponseDto<string>> LoginAsync(Dtos.Employee.LoginEmployeeDto form)
+        public async Task<ServiceResponseDto<string>> LoginAsync(LoginEmployeeDto form)
         {
-            try
-            {
+  
                 int EmployeeId = await DoesEmployeeExist(form);
                 if (EmployeeId == -1)
                 {
@@ -47,20 +36,14 @@ namespace EventsManagement.Services.Employee
 
                  string Token = Helper.CreateEmployeeToken(EmployeeId);
 
-                 //await _EmployeeRepository.UpdateRefreshTokenAsync(Token,EmployeeId);
+               
 
                 return new ServiceResponseDto<string> {Data=Token, Status = 200 };
-
-            }
-            catch
-            {
-                return new ServiceResponseDto<string> { Status = 500 };
-            }
 
 
         }
 
-        async Task<int> DoesEmployeeExist(Dtos.Employee.LoginEmployeeDto form)
+        async Task<int> DoesEmployeeExist(LoginEmployeeDto form)
         {
             var employee = await _db.Employees.FirstOrDefaultAsync(e => (e.Account == form.Account )&& (e.Password == form.Password));
             return employee == null ? -1 : employee.Id;
@@ -68,55 +51,56 @@ namespace EventsManagement.Services.Employee
 
         public async Task<ServiceResponseDto<List<ClubsRequestsGetDto>>> GetClubsRequestsAsync()
         {
-            try
-            {
-
+ 
                 var data = await _EmployeeRepository.GetClubsRequestsAsync();
 
                 return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Data = data, Status = 200 };
-
-            }
-            catch
-            {
-                return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Status = 500 };
-            }
 
 
         }
 
         public async Task<ServiceResponseDto<List<ClubsRequestsGetDto>>> AcceptClubCreationRequestAsync(int RequestId)
         {
-            try
-            {
-
+           
                  await _EmployeeRepository.AcceptClubCreationRequest(RequestId);
 
                  return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Status = 200 };
-
-            }
-            catch
-            {
-                return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Status = 500 };
-            }
 
         }
 
 
         public async Task<ServiceResponseDto<List<ClubsRequestsGetDto>>> DeleteClubCreationRequestAsync(int RequestId)
         {
-            try
-            {
-
+   
                 await _EmployeeRepository.DeleteClubCreationRequest(RequestId);
 
                 return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Status = 200 };
 
-            }
-            catch
-            {
-                return new ServiceResponseDto<List<ClubsRequestsGetDto>> { Status = 500 };
-            }
 
         }
+
+
+        public async Task<ServiceResponseDto<List<StudentsGetDto>>> GetStudentsAsync()
+        {
+           
+
+                var data=await _EmployeeRepository.GetStudentsAsync();
+
+                return new ServiceResponseDto<List<StudentsGetDto>> { Status = 200 ,Data=data};
+
+         
+
+        }
+
+
+
+
+        public async Task<(byte[]? ImageData, string? ImageContentType)> GetClubRequestImageAsync(int Id)
+        {
+
+            return await _EmployeeRepository.GetClubRequestImageAsync(Id);
+
+        }
+
     }
 }

@@ -39,9 +39,34 @@
         "IsRequired": true
       },
       {
-        "Name": "form",
-        "Type": "EventsManagement.Dtos.ClubUpdateDto",
-        "IsRequired": true
+        "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "OpenForRegistrations",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "TypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -149,9 +174,54 @@
         "IsRequired": true
       },
       {
-        "Name": "form",
-        "Type": "EventsManagement.Dtos.UpdatePostDto",
-        "IsRequired": true
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Title",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Content",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Date",
+        "Type": "System.DateOnly",
+        "IsRequired": false
+      },
+      {
+        "Name": "From",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "To",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsPrivate",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "MaxRegistrationCount",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -213,6 +283,22 @@
       },
       {
         "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
+    "Method": "GetClubImage",
+    "RelativePath": "api/clubs/{id}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -305,6 +391,22 @@
   },
   {
     "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
+    "Method": "GetEventmage",
+    "RelativePath": "api/clubs/event/{id}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
     "Method": "GetEventByIdAsync",
     "RelativePath": "api/clubs/event/{UserId},{EventId}",
     "HttpMethod": "GET",
@@ -339,6 +441,22 @@
       },
       {
         "Name": "ClubId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Student.ClubUserController",
+    "Method": "GetEventMembersAsync",
+    "RelativePath": "api/clubs/events/members{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -442,9 +560,24 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "form",
-        "Type": "EventsManagement.Dtos.ClubRequestCreationDto",
-        "IsRequired": true
+        "Name": "ClubTypeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ClubName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -497,6 +630,22 @@
   },
   {
     "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "GetClubImage",
+    "RelativePath": "api/employee/club-request/{id}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
     "Method": "GetRequestsAsync",
     "RelativePath": "api/employee/clubs/requests",
     "HttpMethod": "GET",
@@ -539,6 +688,16 @@
   },
   {
     "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "IsEmployeeLoggedInAsync",
+    "RelativePath": "api/employee/is-logged-in",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
     "Method": "LoginEmployeeAsync",
     "RelativePath": "api/employee/login",
     "HttpMethod": "POST",
@@ -547,7 +706,7 @@
     "Parameters": [
       {
         "Name": "form",
-        "Type": "EventsManagement.Dtos.Employee.LoginEmployeeDto",
+        "Type": "EventsManagement.Dtos.LoginEmployeeDto",
         "IsRequired": true
       }
     ],
@@ -564,6 +723,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EventsManagement.Controllers.Employee.EmployeeController",
+    "Method": "GetStudents",
+    "RelativePath": "api/employee/studets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EventsManagement.Controllers.Student.UserController",
     "Method": "GetAsync",
     "RelativePath": "api/user",
@@ -571,6 +740,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EventsManagement.Controllers.Student.UserController",
+    "Method": "GetStudentImage",
+    "RelativePath": "api/user/{id}/image",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -598,9 +783,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "form",
-        "Type": "EventsManagement.Dtos.UserUpdateImageDto",
-        "IsRequired": true
+        "Name": "image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

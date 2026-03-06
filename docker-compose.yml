@@ -29,9 +29,16 @@ services:
       - "8102:8080"
 
       
-  frontend:
+  studentfrontend:
     build:
-      context: ./Frontend
+      context: ./StudentFrontend
       dockerfile: Dockerfile
     ports:
       - "3002:80"
+
+  adminfrontend:
+    build:
+      context: ./AdminFrontend
+      dockerfile: Dockerfile
+    ports:
+      - "3003:80"

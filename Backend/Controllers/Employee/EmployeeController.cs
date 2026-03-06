@@ -1,4 +1,5 @@
 ﻿
+using EventsManagement.Dtos;
 using EventsManagement.Interfaces.Services.Employee;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +13,17 @@ namespace EventsManagement.Controllers.Employee
     public class EmployeeController(IEmployeeService _EmployeeService) : ControllerBase
     {
 
+        [Authorize(Roles = "Employee")]
+        [HttpGet("is-logged-in/")]
+        public IActionResult IsEmployeeLoggedInAsync()
+        {
+            return Ok();
+        }
+
+
 
         [HttpPost("login/")]
-        public async Task<IActionResult> LoginEmployeeAsync(Dtos.Employee.LoginEmployeeDto form)
+        public async Task<IActionResult> LoginEmployeeAsync(LoginEmployeeDto form)
         {
            
             var data = await _EmployeeService.LoginAsync(form);
@@ -82,5 +91,26 @@ namespace EventsManagement.Controllers.Employee
             return StatusCode(500, data);
 
         }
+
+
+
+        [HttpGet("club-request/{id}/image")]
+        public async Task<IActionResult> GetClubImage(int id)
+        {
+            var Image = await _EmployeeService.GetClubRequestImageAsync(id);
+
+            if (Image.ImageData == null || Image.ImageContentType == null)
+                return NotFound();
+
+            return File(Image.ImageData, Image.ImageContentType);
+        }
+
+
+        [HttpGet("studets/")]
+        public async Task<IActionResult> GetStudents()
+        {
+           return Ok( await _EmployeeService.GetStudentsAsync());
+        }
+
     }
 }

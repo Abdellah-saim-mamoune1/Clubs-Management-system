@@ -95,18 +95,18 @@ namespace EventsManagement.db_samples
 
         public static List<Club> clubs = new List<Club>
         { 
-          new Club { Name = "Falcon FC", TypeId = 1, ImageUrl = "", Description = "Professional football training club.", OpenForRegistrations = true },
-          new Club { Name = "Hoops Academy", TypeId = 2, ImageUrl = "", Description = "Basketball skill development club.", OpenForRegistrations = true },
-          new Club { Name = "Sky Volleyball", TypeId = 3, ImageUrl = "", Description = "Competitive volleyball team.", OpenForRegistrations = false },
-          new Club { Name = "Ace Tennis Club", TypeId = 4, ImageUrl = "", Description = "Tennis training and tournaments.", OpenForRegistrations = true },
-          new Club { Name = "Blue Wave Swim", TypeId = 5, ImageUrl = "", Description = "Swimming lessons and competitions.", OpenForRegistrations = true },
-          new Club { Name = "Grandmaster Chess", TypeId = 6, ImageUrl = "", Description = "Strategic chess learning club.", OpenForRegistrations = true },
-          new Club { Name = "Harmony Music", TypeId = 7, ImageUrl = "", Description = "Music band and vocal training.", OpenForRegistrations = false },
-          new Club { Name = "Stage Stars", TypeId = 8, ImageUrl = "", Description = "Drama and acting club.", OpenForRegistrations = true },
-          new Club { Name = "Lens Masters", TypeId = 9, ImageUrl = "", Description = "Photography and editing workshops.", OpenForRegistrations = true },
-          new Club { Name = "RoboTech", TypeId = 10, ImageUrl = "", Description = "Robotics design and competitions.", OpenForRegistrations = false },
-          new Club { Name = "Elite Debaters", TypeId = 11, ImageUrl = "", Description = "Public speaking and debate training.", OpenForRegistrations = true },
-          new Club { Name = "Creative Arts Hub", TypeId = 12, ImageUrl = "", Description = "Painting and creative design club.", OpenForRegistrations = true }
+          new Club { Name = "Falcon FC", TypeId = 1, Description = "Professional football training club.", OpenForRegistrations = true },
+          new Club { Name = "Hoops Academy", TypeId = 2,  Description = "Basketball skill development club.", OpenForRegistrations = true },
+          new Club { Name = "Sky Volleyball", TypeId = 3, Description = "Competitive volleyball team.", OpenForRegistrations = false },
+          new Club { Name = "Ace Tennis Club", TypeId = 4,  Description = "Tennis training and tournaments.", OpenForRegistrations = true },
+          new Club { Name = "Blue Wave Swim", TypeId = 5, Description = "Swimming lessons and competitions.", OpenForRegistrations = true },
+          new Club { Name = "Grandmaster Chess", TypeId = 6, Description = "Strategic chess learning club.", OpenForRegistrations = true },
+          new Club { Name = "Harmony Music", TypeId = 7,  Description = "Music band and vocal training.", OpenForRegistrations = false },
+          new Club { Name = "Stage Stars", TypeId = 8, Description = "Drama and acting club.", OpenForRegistrations = true },
+          new Club { Name = "Lens Masters", TypeId = 9, Description = "Photography and editing workshops.", OpenForRegistrations = true },
+          new Club { Name = "RoboTech", TypeId = 10,  Description = "Robotics design and competitions.", OpenForRegistrations = false },
+          new Club { Name = "Elite Debaters", TypeId = 11,  Description = "Public speaking and debate training.", OpenForRegistrations = true },
+          new Club { Name = "Creative Arts Hub", TypeId = 12,  Description = "Painting and creative design club.", OpenForRegistrations = true }
         };
 
 

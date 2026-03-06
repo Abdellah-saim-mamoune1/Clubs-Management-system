@@ -10,50 +10,55 @@ namespace EventsManagement.Repositories.User
     {
         public async Task<StudentGetDto?> GetAsync(int Id)
         {
-            try
-            {
-                var UserClubs = await _db.UserClubs.Include(u => u.Club)
-                    .ThenInclude(u => u!.ClubType).Where(u => u.UserId == Id).Select(
-                    u => new UserClubsDto
-                    {
-                        Id = u.ClubId,
-                        ImageUrl = u.Club!.ImageUrl,
-                        Name = u.Club!.Name,
-                        Type = u.Club.ClubType!.Type,
-                        UserRole = u.Role
-                    }).ToListAsync();
+           
+                var userClubs = await _db.UserClubs
+     
+                .Where(u => u.UserId == Id && u.Club != null)
+                
+                .Select(u => new UserClubsDto
+                 {
+                   Id = u.ClubId,
+                
+                   Name = u.Club!.Name,
+                   Type =  u.Club!.ClubType!.Type,
+                   UserRole = u.Role
+                 })
+                .ToListAsync();
 
                 return await _db.Users.Where(u => u.Id == Id).Select(u => new StudentGetDto
                 {
                     Id = u.Id,
-                    ImageUrl = u.ImageUrl,
+                    HasImage = u.ImageData==null?false:true,
                     Degree = u.Degree,
                     FullName = u.FullName,
                     YearOfDegree = u.YearOfDegree,
-                    JoinedClubs = UserClubs,
+                    JoinedClubs = userClubs,
                     Age = u.Age
-                }).FirstAsync();
-            }
-            catch
-            {
-                throw;
-            }
+                }).FirstOrDefaultAsync();
+           
         }
 
 
-        public async Task UpdateImageAsync(int Id,string ImageUrl)
+        public async Task UpdateImageAsync(int Id,string ContentType, byte[] ImageData)
         {
-            try
-            {
+       
                 var User = await _db.Users.FirstAsync(u => u.Id == Id);
-                User.ImageUrl = ImageUrl;
+                User.ImageContentType = ContentType;
+                User.ImageData = ImageData;
+
+
                 await _db.SaveChangesAsync();
                 _cache.Remove("UpcomingEvents");
-            }
-            catch
-            {
-                throw;
-            }
+       
+        }
+
+
+        public async Task<(byte[]? ImageData,string? ImageContentType)> GetImageAsync(int Id)
+        {
+       
+                var User = await _db.Users.FirstAsync(u => u.Id == Id);
+                return (User.ImageData, User.ImageContentType);
+        
         }
     }
 }
