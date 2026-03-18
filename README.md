@@ -13,7 +13,7 @@ The entire system runs using **Docker Compose**, which starts the backend, datab
 # Screenshots
 
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2763.png)
-![Student Dashboard](./Frontend/assets/screenshot-2764.png)
+![Student Dashboard](./StudentFrontend/assets/screenshot-2764.png)
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2765.png)
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2766.png)
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2767.png)
