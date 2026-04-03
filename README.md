@@ -12,6 +12,12 @@ The entire system runs using **Docker Compose**, which starts the backend, datab
 
 # Screenshots
 
+## Dadabase Diagram
+
+![Student Dashboard](db_diagram.png)
+
+## Main pages
+
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2763.png)
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2764.png)
 ![Student Dashboard](./StudentFrontend/assets/screenshot-2765.png)
